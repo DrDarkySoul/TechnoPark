@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ask a question</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../static/new_style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Jura&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style id='background_gradient'></style>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid margin_left margin_right">
+        <span class="col-md-4 col-xs-4">
+          <a href="index.html" class="navbar-left">
+            <img src="../img/logo.png" id="logo" height="50px">
+          </a>
+          <a href="index.html" class="col-md-8 title_brand nowrap" href="#">
+            Nullius in verba
+          </a>
+        </span>
+        <form class="navbar-form col-md-4 col-xs-4">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">ASK!</button>
+        </form>
+        <span class="container-fluid col-md-4 col-xs-4 userbox_margin navbar-right">
+          <span class="navbar-right col-md-8">
+            <h3 class="margin_zero nowrap">Fedor Sky</h3>
+            <a href="error.html" class="nowrap">Settings</a>
+              |
+            <a href="login.html" class="nowrap">  Log Out</a>
+          </span>
+          <span class="col-md-2 container-fluid navbar-right"> 
+            <a href="error.html" class="avatar-sm-container pull-left">
+                <img src="../img/user.jpg" height="45px" class="img-rounded user_avatar">
+            </a>
+          </span>
+        </span>
+      </div>
+    </nav>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 margin_left">
+            <form class="block well form-horizontal">
+              <h2 class="margin_left">New Question</h2>
+              <div class="control-group margin_left">
+                <label class="control-label" for="input01">Title </label>
+                <div class="controls">
+                  <input type="text" class="input-large sign_up_input" id="input01">
+                </div>
+                <label class="control-label" for="textarea">Text</label>
+                <div class="controls">
+                  <textarea class="input-xlarge  sign_up_input" id="textarea" rows="3"></textarea>
+                </div>
+                <label class="control-label" for="input01">Tags </label>
+                <div class="controls">
+                  <input type="text" class="input-xlarge sign_up_input" id="input01">
+                </div>
+              <div class="form_submit">
+                <button type="submit" class="btn btn-default">ASK!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+          <div class="col-md-4 margin_left">
+            <div>
+              <p>
+                <h2>Popular tags</h2>
+                <a href="index.html" class="font_color_black">perl</a>
+                <a href="index.html" class="font_color_black">python</a>  
+                <a href="index.html" class="font_color_black">MySQL</a> 
+                <a href="index.html" class="font_color_black"><big class = "red"> TechnoPark</big></a> 
+                <a href="index.html" class="font_color_black"><big><big>Django</big></big></a> 
+                <a href="index.html" class="font_color_black"><big> Mail.Ru</big></a> 
+                <a href="index.html" class="font_color_black"><big class="green">Voloshin  </big></a> 
+                <a href="index.html" class="font_color_black">FireFox</a>
+              </p>
+            </div>
+            <div>
+                <h2>Best members</h2>
+                <a href="error.html" class="font_color_black">Igor Nikolaev</a><br>
+                <a href="error.html" class="font_color_black">RastaMir</a><br>
+                <a href="error.html" class="font_color_black">Ignatii</a><br>
+                <a href="error.html" class="font_color_black">take4your</a><br>
+                <a href="error.html" class="font_color_black">maga</a><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <nav class="navbar footer navbar-fixed-bottom">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right margin_right">
+          <li><a href="error.html">About us</a></li>
+          <li><a href="error.html">Contacts</a></li>
+        </ul>
+      </div>
+  </nav>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jqueryRotate.js"></script>
+  <script type="text/javascript">
+    $("#logo").rotate({
+      bind:
+      {
+        mouseover : function() {
+        $(this).rotate({animateTo:540})
+      },
+      mouseout : function() {
+        $(this).rotate({animateTo:0})
+        }
+      }
+    });
+  </script>
+  <script type="text/javascript">
+    ns4 = (document.layers)? true:false
+    ie4 = (document.all)? true:false
+    function init() {
+        if (ns4) {document.captureEvents(Event.MOUSEMOVE);}
+        document.onmousemove=mousemove;
+    }
+    function mousemove(event) {
+        var mouse_x = y = 0;
+        if (document.attachEvent != null) {
+            mouse_x = window.event.clientX;
+            mouse_y = window.event.clientY;
+        } else if (!document.attachEvent && document.addEventListener) {
+            mouse_x = event.clientX;
+            mouse_y = event.clientY;
+        }
+        status="x = " + mouse_x + ", y = " + mouse_y;
+        document.getElementById('background_gradient').innerHTML = 'body{'+
+          'background: -moz-linear-gradient(left, #b7cce5 0%, #E6EDF5 '+(50-(mouse_x/screen.width)*100/2)+'%, #F1F5FA '+(75-(mouse_x/screen.width)*100/2)+'%, #E6EDF5 '+(100-(mouse_x/screen.width)*100/2)+'%, #b7cce5 100%);'+
+            'background: -webkit-linear-gradient(left, #b7cce5 0%, #E6EDF5 '+(50-(mouse_x/screen.width)*100/2)+'%, #F1F5FA '+(75-(mouse_x/screen.width)*100/2)+'%, #E6EDF5 '+(100-(mouse_x/screen.width)*100/2)+'%, #b7cce5 100%);'+
+          '}';
+    }
+    init()
+  </script>
+</body>
+</html>
