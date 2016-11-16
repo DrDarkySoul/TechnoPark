@@ -1,0 +1,40 @@
+upstream proxy{
+
+	server nullius-in-verba.io:8081;
+
+}
+
+server{
+
+        listen 80;
+        listen 443 ssl;
+
+        server_name nullius-in-verba.io;
+
+        gzip on;
+        expires 1d;
+
+	location ^~ /uploads/ {
+
+                root /home/parallels/Web/Nullius_in_verba;
+
+        }
+
+
+	location ~ \.\w\w\w?\w?$ {
+
+                root /home/parallels/Web/Nullius_in_verba/static;
+
+        }
+
+	location /login/ {
+	
+#		proxy_pass http://nullius-in-verba.io:8081;
+		proxy_pass http://proxy;
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+
+	}
+
+}
+
