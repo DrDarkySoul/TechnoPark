@@ -1,0 +1,23 @@
+{% extends "Ask/base_log_out.html" %}
+
+{% block title %}
+<title> Login </title>
+{% endblock %}
+
+{% block content %}
+    
+<form class="well form-horizontal block">
+  <h2 class="margin_left"> Sign in</h2>
+  <label class="red margin_left">Sorry, wrong password!</label>
+  <br>
+  <input type="text" class="input-large margin_left sign_in_input" placeholder="Email">
+  <br><br>
+  <input type="password" class="input-large margin_left sign_in_input" placeholder="Password">
+  <label class="sign_in_checkbox">
+    <input type="checkbox"> Remember me
+  </label>
+  <br>
+  <button type="submit" class="btn btn-default margin_left">Sign in</button>
+</form>
+
+{% endblock %}  

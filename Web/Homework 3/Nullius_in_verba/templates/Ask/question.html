@@ -1,0 +1,67 @@
+{% extends "Ask/base_log_in.html" %}
+
+{% block title %}
+<title> Question {{id}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="col-md-12 question_main">
+  <div class="col-md-4">
+    <a href="{% url 'error'%}" class="avatar-sm-container">
+      <img src="/img/user.jpg" class="img-rounded question_avatar_main">
+    </a>
+    <div class="vote">
+      <a href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-8">
+    <h1><a href="{% url 'question' id %}" class="font_color_black">Lorem ipsum dolor sit amet</a></h1> 
+    consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+    <br><br>
+    <span>
+      tags: 
+      <a href="{% url 'index'%}" class="font_color_black">Lorum</a> 
+      <a href="{% url 'index'%}" class="font_color_black">ipsum</a> 
+    <span>
+  </div>
+</div>
+<h2>Answers:</h2>
+
+{% for answer in answers_list %}
+
+  <div class="col-md-12 block">
+  <div class="col-md-2">
+    <a href="{% url 'error'%}" class="avatar-sm-container">
+      <img src="/img/user.jpg" class="img-rounded question_avatar">
+    </a>
+    <div class="vote">
+      <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-8">
+    <p class="answer">
+      {{answer.id}} ) {{answer.text}}
+    </p>
+    <br><br>
+    <span>
+      <label><input type="checkbox" value=""> Correct</label>
+    </span>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+{% endfor %}
+
+<div class="control-group col-md-12">
+  <label class="control-label" for="textarea">Ответить на вопрос:</label>
+  <div class="controls">
+    <textarea class="input-xlarge comment" id="textarea" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Ответить</button>
+</div>
+
+{% endblock %}

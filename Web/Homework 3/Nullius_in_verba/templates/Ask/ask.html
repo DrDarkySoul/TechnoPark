@@ -1,0 +1,30 @@
+{% extends "Ask/base_log_in.html" %}
+
+{% block title %}
+<title> New question </title>
+{% endblock %}
+
+{% block content %}
+
+<form class="block well form-horizontal">
+  <h2 class="margin_left">New Question</h2>
+  <div class="control-group margin_left">
+    <label class="control-label" for="input01">Title </label>
+    <div class="controls">
+      <input type="text" class="input-large sign_up_input" id="input01">
+    </div>
+    <label class="control-label" for="textarea">Text</label>
+    <div class="controls">
+      <textarea class="input-xlarge  sign_up_input" id="textarea" rows="3"></textarea>
+    </div>
+    <label class="control-label" for="input01">Tags </label>
+    <div class="controls">
+      <input type="text" class="input-xlarge sign_up_input" id="input01">
+    </div>
+  </div>
+  <div class="form_submit margin_left">
+    <button type="submit" class="btn btn-default">ASK!</button>
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "Ask/base_log_out.html" %}
+
+{% block title %}
+<title> Sign up </title>
+{% endblock %}
+
+{% block content %}
+
+<form class="block well form-horizontal">
+  <h2 class="margin_left">Registration</h2>
+  <p class="help-block red margin_left">Sorry, this email adress is already registred!</p>
+  <div class="control-group margin_left">
+    <label class="control-label" for="input01">Login </label>
+    <div class="controls">
+      <input type="text" class="input-large sign_up_input" id="input01">
+    </div>
+    <label class="control-label" for="input01">Email </label>
+    <div class="controls">
+      <input type="email" class="input-xlarge sign_up_input" id="input01">
+    </div>
+    <label class="control-label" for="input01">NickName </label>
+    <div class="controls">
+      <input type="text" class="input-xlarge sign_up_input" id="input01">
+    </div>
+    <label class="control-label" for="input01">Password </label>
+    <div class="controls">
+      <input type="password" class="input-xlarge sign_up_input" id="input01">
+    </div>
+    <label class="control-label" for="input01">Repeat password </label>
+    <div class="controls">
+      <input type="password" class="input-xlarge sign_up_input" id="input01">
+    </div>
+    <label class="control-label" for="fileInput">Upload avatar</label>
+    <div class="controls">
+      <input class="input-file" id="fileInput" type="file">
+    </div>
+  </div>
+  <div class="margin_left form_submit">
+    <button type="submit" class="btn btn-default">Sign up</button>
+    <button class="btn">Cancel</button>
+  </div>
+</form>
+
+{% endblock %}          

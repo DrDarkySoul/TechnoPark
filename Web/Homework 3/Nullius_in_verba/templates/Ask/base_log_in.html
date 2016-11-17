@@ -1,0 +1,20 @@
+{% extends "Ask/base.html" %}
+
+  {% block userbox %}
+
+    <span class="container-fluid col-md-4 col-xs-4 userbox_margin navbar-right">
+      <span class="navbar-right col-md-8">
+        <h3 class="margin_zero nowrap">Fedor Sky</h3>
+        <a href="{% url 'error'%}" class="nowrap">Settings</a>
+          |
+        <a href="{% url 'login'%}" class="nowrap">  Log Out</a>
+      </span>
+      <span class="col-md-2 container-fluid navbar-right"> 
+        <a href="{% url 'error'%}" class="avatar-sm-container pull-left">
+            <img src="/img/user.jpg" height="45px" class="img-rounded user_avatar">
+        </a>
+      </span>
+    </span>
+
+  {% endblock %}
+      

@@ -1,0 +1,19 @@
+{% extends "Ask/base_log_in.html" %}
+
+{% block title %}
+<title> Error </title>
+{% endblock %}
+
+{% block content %}
+
+<div class="block">
+  <div class="margin_left">
+    <h2>Oops, something is wrong.</h2>
+    <h3>Perhaps the server maintenance works are carried out.</h3> 
+    <h4 class="red">For more accurate information, please contact the administrator:</h4>
+    <a href="{% url 'error'%}" class="font_color_black">vasya.pupckin@inbox_lublu_mail.ru</a>
+  </div>
+</div>
+
+{% endblock %}
+          

@@ -1,0 +1,55 @@
+{% extends "Ask/base_log_in.html" %}
+
+  {% block title %}
+  {% endblock %}
+
+  {% block content %} 
+
+    {% block header %}
+    {% endblock %}
+
+    {% for question in question_list %}
+
+      <div class="col-md-12 block">
+        <div class="col-md-2">
+          <a href="{% url 'error'%}" class="avatar-sm-container">
+            <img src="/img/user.jpg" class="img-rounded question_avatar">
+          </a>
+          <div class="vote">
+            <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <h3><a href="{% url 'question' id %}" class="font_color_black">{{question.title}}</a></h3> 
+          {{question.text}}
+          <br><br>
+          <span>
+            <a href="{% url 'question' id %}" class="font_color_black">answer (3)</a>
+          </span>
+          <span class="tags">
+            tags: <a href="{% url 'index'%}" class="font_color_black">Lorum</a> <a href="{% url 'index'%}" class="font_color_black">ipsum</a> 
+          <span>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+    {% endfor %}
+
+    <div class="pagination">
+      <span class="step-links">
+        {% if question_list.has_previous %}
+            <a class="font_color_black" href="?page={{ question_list.previous_page_number }}"> Previous &nbsp&nbsp&nbsp</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ question_list.number }} of {{ question_list.paginator.num_pages }}
+        </span>
+
+        {% if question_list.has_next %}
+            <a class="font_color_black" href="?page={{ question_list.next_page_number }}">&nbsp&nbsp&nbsp Next </a>
+        {% endif %}
+      </span>
+    </div>
+
+  {% endblock %}         
